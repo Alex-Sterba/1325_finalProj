@@ -1,3 +1,5 @@
+package finalProj;
+
 import javax.swing.*;
 import java.awt.*;
 
