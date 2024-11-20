@@ -8,8 +8,7 @@ public class MovieCollection {
 	public MovieCollection() {
 		init(DEF_SIZE);
 	}
-	
-	
+
 	//parameterized constructor
 	public MovieCollection(int size) {
 		init(size);
@@ -65,44 +64,35 @@ public class MovieCollection {
 		movies[movies.length - 1] = null;
 	}
 	
-	public void searchByTitle(String uT) {
-		for(int i = 0; i < movies.length - 1; i++) {
-			if(movies[i] == null) {	
-				//reached end of string and thus, end of search
-				break;
-			}
-			
-			if(movies[i].getTitle().equals(uT)) {
-				System.out.println(movies[i].toString());
+	public String searchByTitle(String uT) {
+		StringBuilder result = new StringBuilder();
+		for (Movie movie : movies) {
+			if (movie != null && movie.getTitle().equalsIgnoreCase(uT)) {
+				result.append(movie.toString()).append("\n");
 			}
 		}
+		return result.length() > 0 ? result.toString() : "No movies found with title: " + uT;
 	}
 	
-	public void searchByDirector(String uD) {
-		for(int i = 0; i < movies.length - 1; i++) {
-			if(movies[i] == null) {	
-				//reached end of string and thus, end of search
-				break;
-			}
-			
-			if(movies[i].getDirector().equals(uD)) {
-				System.out.println(movies[i].toString());
+	public String searchByDirector(String uD) {
+		StringBuilder result = new StringBuilder();
+		for (Movie movie : movies) {
+			if (movie != null && movie.getDirector().equalsIgnoreCase(uD)) {
+				result.append(movie.toString()).append("\n");
 			}
 		}
+		return result.length() > 0 ? result.toString() : "No movies found by director: " + uD;
 	}
 	
-	public void searchByGenre(String uG) {
-		for(int i = 0; i < movies.length - 1; i++) {
-			if(movies[i] == null) {	
-				//reached end of string and thus, end of search
-				break;
-			}
-			
-			if(movies[i].getGenre().equals(uG)) {
-				System.out.println(movies[i].toString());
+	public String searchByGenre(String uG) {
+		StringBuilder result = new StringBuilder();
+		for (Movie movie : movies) {
+			if (movie != null && movie.getGenre().equalsIgnoreCase(uG)) {
+				result.append(movie.toString()).append("\n");
 			}
 		}
-	}
+		return result.length() > 0 ? result.toString() : "No movies found in genre: " + uG;
+	}	
 	
 	public void rateMovie(String uT, int uR) {
 		for(int i = 0; i < movies.length - 1; i++) {
