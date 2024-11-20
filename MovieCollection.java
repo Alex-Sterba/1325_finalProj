@@ -32,8 +32,12 @@ public class MovieCollection {
 		if(uM == null || movies[movies.length - 1] != null) {
 			return;
 		}
-		
+
 		for(int i = 0; i < movies.length; i++) {
+			if(movies[i].equals(uM)) {
+				return;
+			}
+			
 			if(movies[i] == null) {
 				movies[i] = uM;
 				break;
