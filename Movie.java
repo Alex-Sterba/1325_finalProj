@@ -111,4 +111,8 @@ public class Movie {
 		String line3 = "Rating: " + this.rating + "\n\n";
 		return line1 + line2 + line3;
 	}
+
+	public boolean equals(Movie uM) {
+		return this.title.equals(uM.title) && this.director.equals(uM.director) && this.year == uM.year && this.genre.equals(uM.genre); 
+	}
 }
