@@ -14,11 +14,19 @@ public class MovieManagementGUI extends JFrame {
         setLayout(new BorderLayout());
 
         JButton addMovieButton = new JButton("Add Movie");              //button for main features
-        JButton searchMovieButton = new JButton("Search Movie");    
+        Font bigFont = addMovieButton.getFont().deriveFont((float)20);
+        addMovieButton.setPreferredSize(new Dimension(300, 300));
+        addMovieButton.setFont(bigFont);
+        JButton searchMovieButton = new JButton("Search Movie"); 
+        searchMovieButton.setFont(bigFont);
         JButton rateMovieButton = new JButton("Rate Movie");
+        rateMovieButton.setFont(bigFont);
         JButton listMoviesButton = new JButton("List All Movies");
+        listMoviesButton.setFont(bigFont);
         JButton removeMovieButton = new JButton("Remove Movie");
+        removeMovieButton.setFont(bigFont);
         JButton exitButton = new JButton("Exit");
+        exitButton.setFont(bigFont);
 
         JPanel buttonPanel = new JPanel();                                          //adding panel buttons
         buttonPanel.setLayout(new GridLayout(1, 6, 10, 10));
